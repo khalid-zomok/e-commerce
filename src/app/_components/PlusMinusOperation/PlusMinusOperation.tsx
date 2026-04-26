@@ -65,7 +65,7 @@ export default function PlusMinusOperation({
 
           {/* Availability text - Soft and professional */}
           <span className="text-lg text-slate-400 font-medium">
-            {product.quantity - quantity} available
+            {product?.quantity - quantity} available
           </span>
         </div>
       </div>

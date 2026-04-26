@@ -86,7 +86,7 @@ export default async function ProductDetails({
           <div className="flex items-center gap-1 py-1">
             {setRatingStar(myProduct.ratingsAverage)}
             <span className="text-sm text-gray-400">
-              {myProduct.ratingsAverage} ({myProduct.ratingsQuantity} reviews)
+              {myProduct?.ratingsAverage} ({myProduct?.ratingsQuantity} reviews)
             </span>
           </div>
 
@@ -94,26 +94,26 @@ export default async function ProductDetails({
           <div className="flex  gap-4 items-center mt-auto pt-2">
             <div className="flex items-center gap-2">
               <span className="text-lg font-bold ">
-                {myProduct.priceAfterDiscount ? (
+                {myProduct?.priceAfterDiscount ? (
                   <span className="text-3xl font-bold">
-                    {myProduct.priceAfterDiscount} EGP
+                    {myProduct?.priceAfterDiscount} EGP
                   </span>
                 ) : (
-                  <span className="text-black">{myProduct.price} EGP</span>
+                  <span className="text-black">{myProduct?.price} EGP</span>
                 )}
               </span>
-              {myProduct.priceAfterDiscount && (
+              {myProduct?.priceAfterDiscount && (
                 <span className="text-lg text-gray-400 line-through">
-                  {myProduct.price} EGP
+                  {myProduct?.price} EGP
                 </span>
               )}
             </div>
-            {myProduct.priceAfterDiscount && (
+            {myProduct?.priceAfterDiscount && (
               <Badge className="bg-red-500 py-4 text-lg">
                 Save{" "}
                 {Math.round(
-                  ((myProduct.price - myProduct.priceAfterDiscount) /
-                    myProduct.price) *
+                  ((myProduct?.price - myProduct?.priceAfterDiscount) /
+                    myProduct?.price) *
                     100,
                 )}
                 %
@@ -135,13 +135,13 @@ export default async function ProductDetails({
 
           <div className="flex gap-4 mb-6">
             <AddButton
-              productId={myProduct.id}
+              productId={myProduct?.id}
               classes="flex-1 cursor-pointer  bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-bold flex items-center justify-center gap-2"
               icon={<FaCartShopping />}
               afterAdded={[
                 "Add to Cart",
                 <span
-                  key={myProduct._id}
+                  key={myProduct?._id}
                   className="flex items-center justify-center gap-2 text-white"
                 >
                   <Check size={20} strokeWidth={3} />

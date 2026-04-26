@@ -22,7 +22,7 @@ export default function AddToWishlistBtn({
     setisLoading(true);
     const res = await addProductToWishlist(id);
     console.log(res);
-    if (res.status === "success") {
+    if (res?.status === "success") {
       setNumOfWishlistItems(res.data.length);
       setItemsIDS(res.data);
       toast.success(res.message, { position: "top-center" });
