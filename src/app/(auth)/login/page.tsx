@@ -45,9 +45,9 @@ export default function Login() {
    console.log(res);
    if (res?.ok) {
       toast.success("Welcome back ❤️", { position: "top-center" });
-      setTimeout(() => router.push("/"), 2000);
+      setTimeout(() => window.location.href = "/", 2000);
     } else {
-      toast.error(res?.error, {
+      toast.error(res?.error || "Invalid credentials", {
         position: "top-center",
       });
     }
